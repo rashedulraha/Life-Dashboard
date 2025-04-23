@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Dashboard</title>
+    <link rel="stylesheet" href="color.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Daily Dashboard</h1>
+    </header>
+    <main class="dashboard">
+      <!-- Widget 1: Clock -->
+      <div class="widget clock-widget">
+        <h2>🕒 Time</h2>
+        <div id="clock"></div>
+      </div>
+
+      <!-- Widget 2: To-Do -->
+      <div class="widget todo-widget">
+        <h2>📝 To-Do List</h2>
+        <div class="todo-input">
+          <input type="text" id="todo-input" placeholder="Add task..." />
+          <button id="add-btn">Add</button>
+        </div>
+        <ul id="todo-list"></ul>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
