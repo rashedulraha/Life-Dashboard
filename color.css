@@ -1,15 +1,25 @@
+/* Base Styles */
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f9;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: all 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #222;
+  color: #f5f5f5;
 }
 
 header {
-  background: #6200ee;
-  color: white;
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
-  text-align: center;
+  background: #4caf50;
+  color: white;
 }
 
 .dashboard {
@@ -26,24 +36,51 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.todo-input {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+.dark-mode .widget {
+  background: #333;
 }
 
-#todo-input {
-  flex: 1;
+/* Clock Widget */
+#clock {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* To-Do Widget */
+#task-list {
+  list-style: none;
+  padding: 0;
+}
+
+#task-list li {
   padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
 }
 
-button {
-  padding: 8px 12px;
-  background: #6200ee;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+#task-list li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Weather Widget */
+#weather-info {
+  font-size: 1.2rem;
+}
+
+/* Quote Widget */
+#quote-text {
+  font-style: italic;
+}
+#quote-author {
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
 }
