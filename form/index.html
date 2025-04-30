@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sing Up Your Account</h2>
+      <p class="main-pera">Welcome back ,please enter your details</p>
+      <form action="#">
+        <div class="parsonal-full-name">
+          <div class="first-name">
+            <label class="first-name" for="First-name">First name</label>
+            <input type="text" placeholder="First-name" required />
+          </div>
+          <div class="last-name">
+            <label class="last-name" for="last-name">Last name</label>
+            <input type="text" placeholder="last-name" required />
+          </div>
+        </div>
+        <div class="email-password">
+          <label for="text">Email Address </label>
+          <input
+            type="text"
+            name="Email"
+            id="Email-Addrass"
+            placeholder="Email Address"
+            required
+          />
+
+          <label for="text">Password </label>
+          <input
+            type="text"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="forgot--and--remember-me">
+          <div class="remember-me">
+            <div class="chakbooks">
+              <input
+                class="chakbooks"
+                type="checkbox"
+                name="checkbox"
+                id="checkbox"
+              />
+              <label class="remember" for="">Remenber me</label>
+            </div>
+            <div class="forgot-passward">
+              <p><a href="forgot-password">Forgot password?</a></p>
+            </div>
+          </div>
+        </div>
+        <button class="log-in">Sing up</button>
+        <hr class="hr" />
+        <div class="continue-With-google">
+          <button class="google-login">Continue with Google</button>
+        </div>
+        <div class="have-an-accont">
+          <h3>Don't have an account ?</h3>
+          <button class="sing-in">Sing up</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

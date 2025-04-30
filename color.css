@@ -36,7 +36,7 @@ header {
   -moz-border-radius: 0.2rem;
   -ms-border-radius: 0.2rem;
   -o-border-radius: 0.2rem;
- 
+
   &:hover {
     cursor: pointer;
   }
@@ -49,6 +49,20 @@ input {
   -ms-border-radius: 0.2rem;
   -o-border-radius: 0.2rem;
   outline: none;
+}
+.singUp {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  border: 0.2rem solid white;
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
 }
 .dashboard {
   display: grid;
