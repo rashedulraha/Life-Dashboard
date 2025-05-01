@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Life Dashboard</title>
     <link rel="stylesheet" href="color.css" />
+    <link rel="stylesheet" href="widget habit-widge/widget habit-widge.css" />
   </head>
   <body>
     <header>
       <h1>Welcome, <span id="username">User</span>!</h1>
 
-      <button class="singUp"><a href="./form/index.html">Sing up</a></button>
+      <div class="feature-btn">
+        <button class="singUp"><a href="./form/index.html">Sing up</a></button>
+        <button class="singUp habit-widge">
+          <a href="widget habit-widge/widget habit-widge.html">habit-widge</a>
+        </button>
+      </div>
       <button class="dark-mode" id="theme-toggle">🌙 Dark Mode</button>
     </header>
 
@@ -31,21 +37,28 @@
       </div>
 
       <!-- Weather Widget -->
-      <div class="widget weather-widget">
-        <h2>⛅ Weather</h2>
-        <div id="weather-info">Loading...</div>
+      <div class="widget">
+        <h2>📅 Mini Calendar</h2>
+        <div id="mini-calendar"></div>
       </div>
 
-      <!-- Quote Widget -->
-      <div class="widget quote-widget">
-        <h2>💬 Daily Quote</h2>
-        <p id="quote-text">
-          "The journey of a thousand miles begins with one step."
+      <!-- Habit Tracker -->
+      <div class="widget">
+        <h2>🎯 Habit Tracker</h2>
+        <div id="habit-tracker"></div>
+      </div>
+    </div>
+    <div class="widget habit-widget">
+      <h2>🌟 Habit Tracker</h2>
+      <div id="habit-container"></div>
+      <div id="reward-status">
+        <p>
+          Points: <span id="points">0</span> | Level: <span id="level">1</span>
         </p>
-        <p id="quote-author">— Lao Tzu</p>
       </div>
     </div>
 
+    <script src="widget habit-widge/widget habit-widge.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

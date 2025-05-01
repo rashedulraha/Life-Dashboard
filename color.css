@@ -126,3 +126,39 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+.habit {
+  margin-bottom: 15px;
+}
+.habit-days {
+  display: flex;
+  gap: 5px;
+}
+.habit .day {
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.habit .day.done {
+  background: #4caf50;
+  color: white;
+}
+
+.dark-mode {
+  padding: 0.2rem 0.6rem;
+  border: 0.2rem solid wheat;
+}
+
+.feature-btn {
+  display: flex;
+  gap: 2rem;
+}
+
+.habit-widge {
+  text-transform: capitalize;
+}
