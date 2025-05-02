@@ -116,7 +116,53 @@ function showNotification(title, message) {
   }
 }
 
-// টেস্ট নোটিফিকেশন (প্রতি 10 সেকেন্ডে)
 setInterval(() => {
   showNotification("Reminder", "Stay hydrated! Drink water 💧");
 }, 10000);
+
+const monthYear = document.getElementById("month-year");
+const dates = document.getElementById("dates");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+
+let current = new Date();
+
+function renderCalendar(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const lastDate = new Date(year, month + 1, 0).getDate();
+
+  monthYear.textContent = `${date.toLocaleString("default", {
+    month: "long",
+  })} ${year}`;
+
+  dates.innerHTML = "";
+
+  for (let i = 0; i < firstDay; i++) {
+    dates.innerHTML += "<div></div>";
+  }
+
+  for (let d = 1; d <= lastDate; d++) {
+    const today = new Date();
+    const isToday =
+      d === today.getDate() &&
+      month === today.getMonth() &&
+      year === today.getFullYear();
+
+    dates.innerHTML += `<div class="${isToday ? "today" : ""}">${d}</div>`;
+  }
+}
+
+prev.addEventListener("click", () => {
+  current.setMonth(current.getMonth() - 1);
+  renderCalendar(current);
+});
+
+next.addEventListener("click", () => {
+  current.setMonth(current.getMonth() + 1);
+  renderCalendar(current);
+});
+
+renderCalendar(current);
