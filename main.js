@@ -166,3 +166,59 @@ next.addEventListener("click", () => {
 });
 
 renderCalendar(current);
+
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const habitList = document.getElementById("habitList");
+const habitInput = document.getElementById("habitInput");
+
+let habits = JSON.parse(localStorage.getItem("habits")) || [];
+
+function saveHabits() {
+  localStorage.setItem("habits", JSON.stringify(habits));
+}
+
+function addHabit() {
+  const name = habitInput.value.trim();
+  if (!name) return;
+
+  habits.push({ name, days: Array(7).fill(false) });
+  habitInput.value = "";
+  saveHabits();
+  renderHabits();
+}
+
+function toggleDay(habitIndex, dayIndex) {
+  habits[habitIndex].days[dayIndex] = !habits[habitIndex].days[dayIndex];
+  saveHabits();
+  renderHabits();
+}
+
+function renderHabits() {
+  habitList.innerHTML = "";
+  habits.forEach((habit, i) => {
+    const habitDiv = document.createElement("div");
+    habitDiv.classList.add("habit");
+
+    const name = document.createElement("div");
+    name.className = "habit-name";
+    name.textContent = habit.name;
+
+    const days = document.createElement("div");
+    days.className = "days";
+
+    habit.days.forEach((done, j) => {
+      const day = document.createElement("div");
+      day.className = "day";
+      if (done) day.classList.add("checked");
+      day.textContent = daysOfWeek[j];
+      day.onclick = () => toggleDay(i, j);
+      days.appendChild(day);
+    });
+
+    habitDiv.appendChild(name);
+    habitDiv.appendChild(days);
+    habitList.appendChild(habitDiv);
+  });
+}
+
+renderHabits();
